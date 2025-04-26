@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/user")
 @CrossOrigin("http://localhost:4200") // now allows angular app?
 public class UserController {
 

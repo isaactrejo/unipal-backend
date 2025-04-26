@@ -2,14 +2,15 @@ package com.example.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 @Entity
 @Table(name = "enrollment")
 public class Enrollment {
     @Id
     private int id;
-    private String userId, courseId;
+    private int userId;
+    private int courseId;
 
     // getters and setters
     public int getId() {
@@ -20,19 +21,19 @@ public class Enrollment {
         this.id = id;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public String getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(String courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 }

@@ -2,14 +2,18 @@ package com.example.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
+
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "assignment")
 public class Assignment {
     @Id
     private int id;
-    private String name, dueDate, courseId;
+    private int courseId;
+    private String name;
+    private Timestamp dueDate;
 
     // getters and setters
 
@@ -29,19 +33,19 @@ public class Assignment {
         this.name = name;
     }
 
-    public String getDueDate() {
+    public Timestamp getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(Timestamp dueDate) {
         this.dueDate = dueDate;
     }
 
-    public String getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(String courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 }

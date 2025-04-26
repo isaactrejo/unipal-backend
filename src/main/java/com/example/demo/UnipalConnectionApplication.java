@@ -6,12 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(
-		exclude = {
-				DataSourceAutoConfiguration.class,
-				HibernateJpaAutoConfiguration.class
-		}
-)
+@SpringBootApplication()
 @EnableJpaRepositories("com.example.demo.repository") // <--- Add this
 public class UnipalConnectionApplication {
 

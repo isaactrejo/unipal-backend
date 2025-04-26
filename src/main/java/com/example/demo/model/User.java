@@ -2,14 +2,18 @@ package com.example.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "user")
+@Table(name = "[user]")
 public class User {
     @Id
     private int id;
-    private String firstName, lastName, email, type, firebaseId; // initializing models to mirror json
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String type;
+    private String firebaseId; // initializing models to mirror json
 
     public User () {}
 
