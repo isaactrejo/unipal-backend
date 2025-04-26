@@ -1,7 +1,15 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
+@Entity
+@Table(name = "course")
 public class Course {
-    private String id, name;
+    @Id
+    private int id;
+    private String name;
 
     // getters and setters
     public String getName() {
@@ -12,11 +20,11 @@ public class Course {
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

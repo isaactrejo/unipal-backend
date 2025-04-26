@@ -1,16 +1,27 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
+import java.sql.Timestamp;
+
+@Entity
+@Table(name = "submission")
 public class Submission {
-    private String id, userId, submittedAt, status;
-    private Integer score;
+    @Id
+    private int id;
+    private String userId, assignmentId, status;
+    private Timestamp submissionDate;
+    private int score;
 
     // getters and setters
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -22,12 +33,20 @@ public class Submission {
         this.userId = userId;
     }
 
-    public String getSubmittedAt() {
-        return submittedAt;
+    public String getAssignmentId() {
+        return assignmentId;
     }
 
-    public void setSubmittedAt(String submittedAt) {
-        this.submittedAt = submittedAt;
+    public void setAssignmentId(String assignmentId) {
+        this.assignmentId = assignmentId;
+    }
+
+    public Timestamp submissionDate() {
+        return submissionDate;
+    }
+
+    public void submissionDate(Timestamp submissionDate) {
+        this.submissionDate = submissionDate;
     }
 
     public String getStatus() {

@@ -1,15 +1,23 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
+@Entity
+@Table(name = "assignment")
 public class Assignment {
-    String id, name, dueDate, courseId;
+    @Id
+    private int id;
+    private String name, dueDate, courseId;
 
     // getters and setters
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

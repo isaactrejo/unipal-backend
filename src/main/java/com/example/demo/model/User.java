@@ -1,27 +1,39 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
+@Entity
+@Table(name = "user")
 public class User {
-    private String id, name, email, type; // initializing models to mirror json
+    @Id
+    private int id;
+    private String firstName, lastName, email, type, firebaseId; // initializing models to mirror json
 
     public User () {}
 
     // getters and setters for table data
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
+
+    public String getLastName() { return lastName; }
+
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
     public String getEmail() {
         return email;
@@ -38,6 +50,10 @@ public class User {
     public void setType(String type) {
         this.type = type;
     }
+
+    public String getFirebaseId() { return firebaseId; }
+
+    public void setFirebaseId(String firebaseId) { this.firebaseId = firebaseId; }
 }
 
 
