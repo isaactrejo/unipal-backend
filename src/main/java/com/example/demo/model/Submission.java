@@ -1,33 +1,54 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+
+import java.sql.Timestamp;
+
+@Entity
+@Table(name = "submission")
 public class Submission {
-    private String id, userId, submittedAt, status;
-    private Integer score;
+    @Id
+    private int id;
+    private int userId;
+    private int assignmentId;
+    private Timestamp submissionDate;
+    private String status;
+    private int score;
 
     // getters and setters
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public String getSubmittedAt() {
-        return submittedAt;
+    public int getAssignmentId() {
+        return assignmentId;
     }
 
-    public void setSubmittedAt(String submittedAt) {
-        this.submittedAt = submittedAt;
+    public void setAssignmentId(int assignmentId) {
+        this.assignmentId = assignmentId;
+    }
+
+    public Timestamp submissionDate() {
+        return submissionDate;
+    }
+
+    public void submissionDate(Timestamp submissionDate) {
+        this.submissionDate = submissionDate;
     }
 
     public String getStatus() {
@@ -38,11 +59,11 @@ public class Submission {
         this.status = status;
     }
 
-    public Integer getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public void setScore(int score) {
         this.score = score;
     }
 }

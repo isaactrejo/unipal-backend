@@ -1,15 +1,27 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+
+import java.sql.Timestamp;
+
+@Entity
+@Table(name = "assignment")
 public class Assignment {
-    String id, name, dueDate, courseId;
+    @Id
+    private int id;
+    private int courseId;
+    private String name;
+    private Timestamp dueDate;
 
     // getters and setters
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -21,19 +33,19 @@ public class Assignment {
         this.name = name;
     }
 
-    public String getDueDate() {
+    public Timestamp getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(Timestamp dueDate) {
         this.dueDate = dueDate;
     }
 
-    public String getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(String courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 }
